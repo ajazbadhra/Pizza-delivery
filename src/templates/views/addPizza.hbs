@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pizza</title>
+</head>
+
+<body>
+    {{>adminNavbar}}
+    <div class="m-4">
+
+        <section class="h-100" style="background-color: #eee;">
+            <div class="container h-100 py-5">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-10">
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-normal mb-0 text-black">Add Pizza</h3>
+                        </div>
+
+
+
+                        <form action="/admin/addpizza" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Pizza Name</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Pizza Name" name="name" />
+                                <label for="exampleInputEmail1">Price</label>
+                                <input type="number" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter price" name="price" />
+                                <label for="select">Select Category</label>
+                                <select class="form-select" aria-label="Default select example" name="category" id="select">
+                                    <option value="veg" selected>Veg</option>
+                                    <option value="non-veg">Non-veg</option>
+                                </select>
+                                <label for="exampleInputEmail1">Pizza Description</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Pizza Name" name="desc" />
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" name="img" type="file" id="formFile">
+                            </div><br />
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

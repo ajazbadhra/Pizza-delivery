@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza</title>
+  {{>styleLinks}}
+</head>
+
+<body>
+  <div class="m-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a href="/home" class="navbar-brand">
+          <img src="/img/logo.png" alt="" />
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav ms-auto">
+          <a href="/myBookings" class="nav-item nav-link">My Bokings</a>
+          <a href="#" class="nav-item nav-link">{{firstname}}</a>
+          <a href="/edit" class="nav-item nav-link">Edit Profile</a>
+          <a href="/balance" class="nav-item nav-link"><b>$ {{balance}}</b></a>
+          <a href="/logout" class="nav-item nav-link">Logout</a>
+          <a href="/cart/getCart" class="btn btn-primary rounded-pill "><img src="/img/cart.png" alt="" /></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+</head>
+
+<body>
+  {{>navbar}}
+  <div class="m-4">
+    <section class="h-100" style="background-color: #eee;">
+      <div class="container h-100 py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-10">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 class="fw-normal mb-0 text-black">Cart</h3>
+            </div>
+            {{#each cart}}
+            {{#products}}
+            <div class="card rounded-3 mb-4">
+              <div class="card-body p-4">
+                <div class="row d-flex justify-content-between align-items-center">
+                  <div class="col-md-2 col-lg-2 col-xl-2">
+                    <img src="{{img}}" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-xl-3">
+                    <p class="lead fw-normal mb-2">{{name}}</p>
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                    <p class="lead fw-normal mb-2">Qty: {{qty}}</p>
+                  </div>
+                  <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <h5 class="mb-0">${{price}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/products}}
+            {{/each}}
+
+
+
+
+            {{#if cart}}
+            <div class="card">
+              <div class="card-body p-4 ">
+
+                <div class="row d-flex justify-content-between align-items-center">
+
+                  <div class="col-md-1 col-lg-2">
+                    <a href="/cart/payment">
+                      <button type="button" class="btn btn-warning btn-block">Proceed to Pay</button></a>
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                    <p class="lead fw-normal mb-2">Total Qty: {{tqty}}</p>
+                  </div>
+                  <div class="col-md-3 col-lg-2 col-lg-2 offset-lg-1">
+                    <h5 class="mb-0 ">${{sum}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{else}}
+            <h3>Opps! Empty Cart, Add Some Pizza to enjoy the Test...</h3>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
